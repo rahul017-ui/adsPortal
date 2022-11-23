@@ -1,0 +1,44 @@
+<div class="Whole">
+<mat-toolbar color="primary">
+    <span>Ads Portal </span>
+  </mat-toolbar>
+
+  <div>
+    <form class="form" [formGroup]="searchForm" (ngSubmit)="onSubmit()" >
+        <mat-form-field >
+          <input matInput placeholder="Search company" formControlName="search">
+        </mat-form-field>
+        <button>Search</button>
+      </form>
+    </div>
+</div>
+<div>
+  <div >
+     <table class="table">
+      <h3>Companies</h3>
+        <tr>
+          <th>NAME</th>
+          <th>URL</th>
+           <th>PRIMARY TEXT</th>
+           <th>DESCRIPTION</th>
+           <th>HEADLINE</th>
+           <th>CTA</th>
+           <th>IMAGE URL</th>
+        </tr>
+        <tr *ngFor="let ad of ads">
+          <td>{{ad.name}}</td>
+          <td>
+            <a href="">{{ad.url}}</a>
+          </td>
+           <td>{{ad.primaryText}}</td>
+           <td>{{ad.description}}</td>
+           <td>{{ad.headline}}</td>
+           <td>{{ad.CTA}}</td>
+           <td>
+            <a href="">{{ad.imageUrl}}</a>
+           </td>
+        </tr>
+       
+     </table>
+  </div>
+</div>
